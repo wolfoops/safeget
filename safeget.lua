@@ -13,7 +13,7 @@ local accessorMT = {
         local lastValue = rawget(me,'lastValue')
         local ok = pcall(setter, lastValue, key, newValue)
         if ok then
-          return newValue
+          return true
         else
           return nil,string.format("safeGet: fail to set value <%s> into <%s> with key <%s>",
             tostring(newValue),tostring(lastValue),tostring(key))
